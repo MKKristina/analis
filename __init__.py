@@ -1,22 +1,23 @@
 """
-Аналитический блок приложения Graffvenv.
-
-Модуль отвечает за анализ криптовалютных данных, технические индикаторы
-и машинное обучение для принятия торговых решений.
+Модуль технического анализа
 """
 
-from .analyzer import AnalyticalModule, TechnicalAnalyzer, MLAnalyzer
-from .indicators import calculate_indicators
-from .market_scanner import MarketScanner
-from .news_analyzer import NewsAnalyzer
-from .ml.prediction import PredictionModel
+from analysis.technical.indicators import (
+    sma, ema, rsi, macd, bollinger_bands, stochastic_oscillator,
+    atr, obv, calculate_all_indicators
+)
+
+from analysis.technical.patterns import (
+    detect_candle_patterns, detect_chart_patterns,
+    identify_supports_resistances, detect_divergence
+)
 
 __all__ = [
-    'AnalyticalModule',
-    'TechnicalAnalyzer',
-    'MLAnalyzer',
-    'calculate_indicators',
-    'MarketScanner',
-    'NewsAnalyzer',
-    'PredictionModel'
+    # Индикаторы
+    'sma', 'ema', 'rsi', 'macd', 'bollinger_bands', 'stochastic_oscillator',
+    'atr', 'obv', 'calculate_all_indicators',
+    
+    # Паттерны
+    'detect_candle_patterns', 'detect_chart_patterns',
+    'identify_supports_resistances', 'detect_divergence'
 ]
